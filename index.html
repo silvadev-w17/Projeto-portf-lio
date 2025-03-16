@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer"/> 
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="./img/icons/icon.raio.png" type="x-icon">
+    <title>Portfólio | Wesley Silva</title>
+</head>
+<body>
+    <nav id="navegacao" class="navegacao">
+        <ul class="menu">
+            <li>
+                <a href="#inicio" class="menu-link">Início</a>
+            </li>
+            <li>
+                <a href="#sobre" class="menu-link">Sobre</a>
+            </li>
+            <li>
+                <a href="#projetos" class="menu-link">Projetos</a>
+            </li>
+            <li>
+                <a href="#contatos" class="menu-link">Contato</a>
+            </li>
+        </ul>
+    </nav>
+
+    <main id="inicio" class="cabecalho">
+        <img src="./img/MyPhoto.jpg" alt="Foto do Wesley Silva" class="foto-perfil">
+        <h1>Wesley Silva</h1>
+        <p class="cabecalho-sub-titulo">Desenvolvedor Front-End</p>
+
+        <div class="social-icons">
+            <a href="https://github.com/silvadev-w17" target="_blank"><i class="fa-brands fa-github"></i></a> 
+            <a href="https://www.linkedin.com/in/wesleysilvab07/" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
+        </div>
+        
+    </main>
+
+    <section id="sobre" class="sobre">
+        <h2 class="sobre-titulo">Sobre mim</h2>
+        <div class="sobre-caixa">
+            <p class="sobre-paragrafo">
+                Olá, me chamo Wesley. Sou Desenvolvedor Front End, E estou buscando minha primeira oportunidade de trabalho para aprimorar minhas habilidades e conhecimentos, atualmente cursando Análise e Desenvolvimento de Sistemas na Descomplica, além de cursos intensivos para aprimorar minhas técnicas em HTML, CSS, JavaScript, Node.js, React.js, Git e Github.
+            </p>
+        </div>
+
+        <div class="img-icon">
+            <img src="./img/icons/HTML.png" alt="HTML" title="HTML (HyperText Markup Language) É a linguagem de marcação usada para criar a estrutura das páginas da web. Ele define os elementos da página, como textos, imagens, links e botões." class="img-icon">
+            
+            <img src="./img/icons/CSS.png" alt="CSS" title="CSS (Cascading Style Sheets) É a linguagem usada para estilizar páginas da web. Com CSS, você pode mudar cores, fontes, tamanhos e posicionamento dos elementos." class="img-icon">
+
+            <img src="./img/icons/JS.png" alt="JavaScript" title="JavaScript É uma linguagem de programação usada para tornar as páginas interativas. Com JavaScript, você pode criar animações, validar formulários e atualizar conteúdos sem recarregar a página." class="img-icon">
+
+            <img src="./img/icons/Node.js.png" alt="Node.js" title="Node.js É um ambiente de execução do JavaScript no servidor. Isso significa que, além de rodar no navegador, o JavaScript pode ser usado para criar servidores, processar banco de dados e construir APIs." class="img-icon">
+
+            <img src="./img/icons/React.js.png" alt="React" title="React.js É uma biblioteca JavaScript criada pelo Facebook para desenvolver interfaces modernas e dinâmicas. Ele facilita a criação de componentes reutilizáveis, como botões e menus." class="img-icon">
+
+            <img src="./img/icons/git.png" alt="Git" title="É um sistema de controle de versão que ajuda a salvar o histórico de mudanças do seu código. Com Git, você pode voltar para versões anteriores do seu projeto e trabalhar em equipe sem perder arquivos importantes." class="img-icon">
+            
+            <img src="./img/icons/github.png" alt="github" title="GitHub É uma plataforma online para hospedar códigos usando Git. Ele permite que você compartilhe seu código com outras pessoas e colabore em projetos open source." class="img-icon">
+
+        </div>
+
+    </section>
+
+    <section id="projetos" class="projetos">
+        <h2 class="projetos-titulo">Meus Projetos</h2>
+        <div class="projetos-caixa">
+            <div class="projetos-card">
+                <img src="./img/Projeto1.png" alt="Projeto 1" class="projetos-imagem">
+                <div class="caixa-texto-projetos">
+
+                    <h3 class="info-projetos">Tela de Login</h3>
+                    <p class="paragrafo-projetos">Uma tela de Login moderna com animaçôes suaves e responsivo.</p>
+
+                </div>
+            </div>
+
+            <div class="projetos-card">
+                <img src="./img/Projeto2.png" alt="Projeto 2" class="projetos-imagem">
+                <div class="caixa-texto-projetos">
+
+                    <h3 class="info-projetos">Refrigerante Sabores</h3>
+                    <p class="paragrafo-projetos">Propaganda de Refrigerantes bem dinâmica ideal para mostrar novos produtos.</p>
+
+                </div>
+            </div>
+
+            <div class="projetos-card">
+                <img src="./img/Projeto3.png" alt="Projeto 3" class="projetos-imagem">
+                <div class="caixa-texto-projetos">
+
+                    <h3 class="info-projetos">Portfólio</h3>
+                    <p class="paragrafo-projetos">Meu primeiro portfólio criado, simples porém dedicado para ir aprimorando minhas habilidades.</p>
+
+                </div>
+            </div>
+
+        </div>  
+
+    </section>
+
+    <section id="contatos" class="contatos">
+        <h2 class="contatos-titulo">Entre em Contato</h2>
+    
+        <form class="fomulario-contato" id="formulario" onsubmit="enviarForm(event)">
+    
+            <div class="grupo-form">
+                <label for="nome">Nome</label>
+                <input placeholder="Digite seu Nome" class="campo-form" id="nome">
+            </div>
+    
+            <div class="grupo-form">
+                <label for="mensagem">Mensagem</label>
+                <textarea class="campo-form" placeholder="Digite sua Mensagem" rows="4" id="mensagem"></textarea>
+            </div>
+    
+            <button class="botao-form" type="submit">Enviar WhatsApp</button>
+    
+        </form>
+    </section>
+    
+    <footer>
+        <p class="rodape">Code 2025 &copy; Todos os direitos reservados</p>
+    </footer>
+    
+    <script src="./scripts.js"></script>
+    
+</body>
+    
+</html>

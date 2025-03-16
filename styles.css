@@ -1,0 +1,314 @@
+* { /*seletor universal*/
+    margin: 0; /*margem das bordas*/
+    padding: 0; /*preenchimento das bordas*/
+    box-sizing: border-box; /*tamanho da caixa*/
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /*fonte*/
+}
+
+html {
+    scroll-behavior: smooth; /*efeito de rolagem suave*/
+}
+:root { /*variáveis fixas que você cria para reltilizar durante o css*/
+    --primaria: #4f46e5;
+    --secundaria: #7c3aed;
+    --azul: #0424b1;
+    --escuro: #0a0f1c;
+    --clara: #e2e8f0;
+    --azulciano: #0096c7;
+    --vidro: rgba(255, 255, 255, 0.1);
+}
+
+body { /*corpo do site onde fica o conteúdo e você muda a cord de fundo do site*/
+    background-color: var(--escuro); /*cor de fundo do site*/
+    color: var(--clara); /*cor do texto*/
+}
+
+.navegacao { /*id do menu de navegação do site*/
+    position: fixed; /*fixa o elemento Menu na tela*/
+    top: 0; /*fixa o elemento Menu na tela mas não deixa ele flutuar*/
+    background: rgba(3, 4, 8, 0.324); /*cor de fundo do menu*/
+    width: 100%; /*largura do menu*/
+    z-index: 100; /*z-index: 100; define a ordem de empilhamento dos elementos*/
+    padding: 1.5rem; /*espaçamento interno do menu*/
+}
+
+.menu { /*estiliza o menu*/
+    display: flex; /*exibe os itens do menu em linha horizontal*/
+    justify-content: center; /*alinha os itens do menu ao centro*/
+    list-style: none; /*remove os marcadores de lista*/
+    gap: 3rem; /*espaçamento entre os itens do menu*/
+}
+
+.menu-link { /*estiliza o link*/
+    text-decoration: none; /*tira o sublinhado do link*/
+    color: var(--clara); /*cor do link*/
+    font-size: 1.3rem; /*tamanho da fonte do link*/
+    font-weight: 500; /*peso da fonte do link*/
+    position: relative; /*fixa o elemento na tela mas não deixa ele flutuar*/
+    padding: 0.5rem 0; /*espaçamento entre o link e a borda*/
+}
+
+.menu-link::after { /*cria uma linha embaixo do link antes de clicar*/
+    content: ''; /*cria um elemento vazio*/
+    height: 2px;   /*altura da linha do link*/
+    width: 0%; /*largura da linha do link*/
+    position: absolute; /*fixa o elemento na tela sempre*/
+    bottom: 0; /*alinha a linha embaixo do link*/
+    left: 0; /*alinha a linha a esquerda do link*/
+    background: linear-gradient(90deg, var(--primaria), var(--azulciano)); /*cor da linha que fica em baixo do link*/
+    transition: width 0.5s ease; /*faz a linha ficar em movimento suave*/
+}
+
+.menu-link:hover::after { /*quando o mouse passar por cima do link a linha fica maior*/
+    width: 100%; /*aumenta a largura da linha que fica em baixo do link*/
+}
+
+
+.cabecalho { /*estiliza o cabeçalho*/
+    color: var(--azulciano); /*cor do texto do cabeçalho*/
+    min-height: 100vh; /* da altura da tela */
+    display: flex; /* alinha os elementos um ao lado do outro*/
+    justify-content: center; /*centraliza o conteudo*/
+    align-items: center; /* alinha ou centraliza o conteudo*/
+    flex-direction: column; /*coloca os elementos um embaixo do outro*/
+}
+
+.foto-perfil { /*adiciona uma borda arredondada*/
+    width: 350px; /* largura da imagem*/
+    height: 350px; /* altura da imagem*/
+    box-shadow: rgba(21, 220, 255, 0.539) 0px 22px 70px 4px; /* adiciona uma sombra na imagem*/
+    border-radius: 50%; /* adiciona uma borda arredondada*/
+    border: 4px solid var(--vidro); /* adiciona uma borda na imagem*/
+    animation: flutuar 5s ease-in-out infinite; /* animação de flutuação*/
+}
+
+h1 { /* estiliza o h1*/
+    font-size: 3.5rem; /* tamanho da fonte do h1*/
+    color: linear-gradient(90deg, var(--primaria), var(--azulciano)); /* cor do texto do h1*/
+    font-weight: bold; /* peso da fonte do h1*/
+    margin: 20px; /* margem do h1*/
+}
+
+.cabecalho-sub-titulo { /* class do sub titulo do cabecalho*/
+    font-size: 1.5rem; /* tamanho da fonte do sub titulo do cabecalho*/
+    color: var(--clara); /* cor do texto do sub titulo do cabecalho*/
+}
+
+.social-icons a{ /* estiliza os icones das redes sociais*/
+    display: inline-flex; /* exibe os icones das redes sociais em linha horizontal*/
+    justify-content: center;
+    align-items: center; 
+    width: 3.5rem; 
+    height: 3.5rem;
+    background: transparent;
+    border: 2px solid var(--azulciano); 
+    border-radius: 50%;
+    font-size: 2rem;
+    color: var(--azulciano);
+    margin: 3rem 1.5rem 3rem 0;
+    transition: 0.3s ease-in-out;
+    text-decoration: none; /* tira o sublinhado do link*/
+}
+
+.social-icons a:hover { /* estiliza os icones das redes sociais quando o mouse passar por cima*/
+    color: var(--azulciano);
+    transform: scale(1.3) translateY(-5px);
+    box-shadow: 0 0 25px var(--azulciano);
+    background-color: #05466bd6;
+}
+
+.sobre { /* estiliza a do Titulo sobre mim*/
+    border-top: transparent; /* adiciona uma borda na parte superior do sobre*/
+    background-color: rgba(10, 130, 148, 0.113);
+    min-height: 100vh; /* da altura da tela */
+    display: flex; /* alinha os elementos um ao lado do outro*/
+    justify-content: center; /*centraliza o conteudo*/
+    align-items: center; /* alinha ou centraliza o conteudo*/
+    flex-direction: column; /*coloca os elementos um embaixo do outro*/
+    gap: 2rem; /* espaçamento entre os elementos do sobre*/ 
+    padding: 6rem 2rem; /* espaçamento interno do sobre*/
+}
+
+
+.sobre-titulo { /* estiliza o titulo sobre*/
+    font-size: 3rem; /* tamanho da fonte do titulo sobre*/ 
+    color: var(--clara);
+    text-align: center; /* alinha o texto do titulo sobre ao centro*/
+}
+
+.sobre-caixa {
+    padding: 2rem; /* espaçamento interno do sobre caixa*/
+    max-width: 800px; /* largura maxima do sobre caixa*/
+    margin: 0 auto; /* margem automática do sobre caixa que centraliza o conteudo*/
+    border-radius: 16px; /* adiciona uma borda arredondada no sobre caixa*/
+    border: 1px solid var(--vidro); /* adiciona uma borda de linha no sobre caixa*/
+    backdrop-filter: blur(10px); /* adiciona um efeito de desfoque na texto ou imagem*/
+    background: rgba(255, 255, 255, 0.05); /* adiciona um fundo transparente no sobre caixa*/
+}
+
+.sobre-paragrafo {  /* estiliza o paragrafo do sobre mim*/
+    text-align: justify; /* alinha o texto do paragrafo ao centro e justifica*/
+    font-size: 1.2rem; /* tamanho da fonte do paragrafo*/
+}
+
+.img-icon { /* estiliza a imagem do icone*/
+    padding: 2rem; 
+    height: 150px;
+    display: flex; /* exibe os elementos em linha horizontal*/
+    justify-content: center; /*centraliza o conteudo*/
+    align-items: center; /* alinha ou centraliza o conteudo*/
+    gap: 1.2rem; /* espaçamento entre os elementos*/
+    transition: 0.3s ease-in-out; /* faz a imagem ficar em movimento suave*/
+}
+
+.img-icon img:hover { 
+    transform: scale(1.5) translateY(-5px);
+}
+
+.projetos { /* estiliza a do Titulo projetos*/
+    min-height: 100vh; /* da altura da tela */
+    margin-top: 50px; /* margem superior do projetos*/
+    flex-direction: column; /*coloca os elementos um embaixo do outro*/
+    display: flex; /* alinha os elementos um ao lado do outro*/
+    align-items: center; /* alinha ou centraliza o conteudo*/
+    border-top: transparent; /* adiciona uma borda na parte superior do projetos*/
+    padding: 15rem;
+}
+
+.projetos-caixa { /* estiliza o projetos caixa*/
+    display: grid; /* exibe os elementos em linha horizontal*/
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* cria uma grade de elementos com largura mínima de 300px e máxima de 1 fração*/
+    gap: 2rem; /* espaçamento entre os elementos*/
+    max-width: 1200px; /* largura maxima da caixa de projetos*/
+    margin: 0 auto; /* margem automática do projetos caixa que centraliza o conteudo*/
+}
+
+.projetos-card { /* estiliza o projetos card*/
+    background: rgba(255, 255, 255, 0.05); /* adiciona um fundo transparente no projetos card*/
+    border-radius: 16px; /* adiciona uma borda arredondada no projetos card*/
+    backdrop-filter: blur(5px); /* adiciona um efeito de desfoque na texto ou imagem*/
+    border: 1px solid var(--vidro); /* adiciona uma borda de linha no projetos card*/
+    overflow: hidden; /* oculta o conteudo que ultrapassa o tamanho do projetos card*/
+    transition: all 0.5s ease; /* adiciona uma transição suave ao projetos card*/
+    cursor: pointer; /* adiciona um cursor de ponteiro ao projetos card*/
+}
+
+.projetos-titulo { /* estiliza o titulo do projetos h2*/
+    text-align: center; /* alinha o texto do titulo do projetos ao centro*/
+    font-size: 2.5rem; /* tamanho da fonte do titulo do projetos*/
+    margin-bottom: 50px; /* margem inferior do titulo do projetos*/
+}
+
+.projetos-card:hover { /* estiliza o projetos card quando o mouse passar por cima*/
+    box-shadow: 0 10px 20px rgba(2, 137, 154, 0.874); /* adiciona uma sombra ao projetos card*/
+    transform: translateY(-10px) scale(1.03); /* adiciona um efeito de movimento ao projetos card*/
+}
+
+
+.projetos-imagem { /* estiliza a imagem do projetos*/
+    height: 200px; /* altura da imagem*/
+    width: 100%; /* largura da imagem*/
+    object-fit: cover; /* ajusta a imagem para cobrir todo o espaço disponível */
+}
+
+.caixa-texto-projetos { /* estiliza a caixa de texto do projetos*/
+    padding: 1.5rem; /* espaçamento interno do texto h3 e paragrafo no projetos card*/
+}
+
+.paragrafo-projetos { /* estiliza o paragrafo do projetos*/
+    color: rgba(223, 222, 222, 0.597); /* cor do texto do paragrafo no projetos card*/
+    line-height: 1.25rem; /* espaçamento entre as linhas do paragrafo no projetos card*/
+}
+
+.info-projetos { /* estiliza a caixa de texto do projetos h3*/
+    font-size: 1.3rem; /* tamanho da fonte do texto h3 no projetos card*/
+    color: var(--azulciano); /* cor do texto h3 no projetos card*/
+    margin-bottom: 5px; /* margem inferior do texto h3 no projetos card*/
+}
+
+
+.contatos { /* estiliza a do Titulo contatos*/
+    border-top: transparent; /* adiciona uma borda na parte superior do sobre*/ 
+    min-height: 80vh; /* da altura da tela */
+    background-color: rgba(10, 130, 148, 0.113);
+    padding: 20rem /* espaçamento interno do topo de contatos*/
+    
+}
+
+.contatos-titulo { /* estiliza o titulo do contatos*/
+    text-align: center; /* alinha o texto do titulo do contatos ao centro*/
+    font-size: 2.5rem; /* tamanho da fonte do titulo do contatos*/
+    margin-bottom: 20px; /* margem inferior do titulo do contatos*/
+}
+
+.fomulario-contato { 
+    max-width: 550px; /* largura maxima do formulario de contato*/
+    margin: 0 auto; /* margem automática do formulario de contato que centraliza o conteudo*/
+    background: rgba(37, 37, 37, 0.487); /* adiciona um fundo transparente no formulario de contato*/
+    border-radius: 16px; /* adiciona uma borda arredondada no formulario de contato*/
+    backdrop-filter: blur(5px); /* adiciona um efeito de desfoque na texto ou imagem*/
+    padding: 2rem; /* espaçamento interno do formulario de contato*/
+    border: 1px solid var(--vidro); /* adiciona uma borda de linha no formulario de contato*/
+    border-radius: 16px; /* adiciona uma borda arredondada no formulario de contato*/
+}
+
+
+.campo-form {
+    width: 100%; /* largura do campo de formulario*/
+    padding: 1rem; /* espaçamento interno do campo de formulario*/
+    margin-top: 0.3rem; /* margem superior do campo de formulario*/
+    background: rgb(45, 45, 45);
+    border-radius: 8px; /* adiciona uma borda arredondada no campo de formulario*/
+    color: var(--clara); /* cor do texto do campo de formulario*/
+    border: 1px solid var(--vidro); /* adiciona uma borda de linha no campo de formulario*/
+    outline: none; /* remove a borda de foco do campo de formulario*/
+}
+
+.campo-form:focus {
+    border-color: var(--azulciano); /* cor da borda de foco do campo de formulario*/
+    box-shadow: 0 0 10px rgba(79, 70, 229, 0.3); /* adiciona uma sombra ao campo de formulario*/
+}
+
+.grupo-form {
+    margin-bottom: 1.5rem; /* margem inferior do grupo de formulario*/
+    gap: 1rem; /* espaçamento entre os campos de formulario*/
+}
+
+            
+.botao-form {
+    color: var(--clara); /* cor do texto do botao de formulario*/
+    background: linear-gradient(45deg, var(--primaria),var(--azulciano)); /* adiciona um gradiente de cor ao botao de formulario*/
+    padding: 1rem 2rem; /* espaçamento interno do botao de formulario*/
+    border: none; /* remove a borda do botao de formulario*/
+    border-radius: 8px; /* adiciona uma borda arredondada no botao de formulario*/ 
+    cursor: pointer; /* adiciona um cursor de ponteiro ao botao de formulario*/
+    font-weight: bold; /* adiciona uma fonte em negrito ao botao de formulario*/
+    font-size: 1rem; /* tamanho da fonte do botao de formulario*/
+    width: 100%; /* largura do botao de formulario*/
+    transition: all 0.5s ease; /* adiciona uma transição suave ao botao de formulario*/
+}
+
+.botao-form:hover {
+    transform: translateY(-4px); /* adiciona um efeito de movimento ao botao de formulario*/
+    box-shadow: 0 5px 15px rgba(2, 137, 154, 0.874); /* adiciona uma sombra ao botao de formulario*/
+}
+
+.rodape {
+    border-top: transparent; /* adiciona uma borda na parte superior do rodape*/
+    text-align: center; /* alinha o texto do rodape ao centro*/
+    padding: 1rem; /* espaçamento interno do rodape*/
+    backdrop-filter: blur(10px); /* adiciona um efeito de desfoque na texto ou imagem*/
+    color: var(--clara); /* cor do texto do rodape*/
+    font-size: 1rem; /* tamanho da fonte do rodape*/
+}
+
+@keyframes flutuar {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
